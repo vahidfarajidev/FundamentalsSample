@@ -1,0 +1,43 @@
+
+🧠 What is a Callback? (Simple Explanation)
+
+A callback is when you pass a function into another function to be called later, usually when something happens.
+
+Think of it like this:
+
+    "I give you a task, and I tell you: when you reach a certain point, call me back or run this code."
+
+🎬 Real-Life Analogy
+
+Imagine you send a friend to the bank to do something for you.
+You say:
+
+    “When it’s your turn in line, call me.”
+
+You don’t want to wait the whole time — just get notified when needed.
+
+That phone call is a callback — a signal that something has happened and now it’s your turn to respond.
+🧑‍💻 In Your Code
+
+public void Download(string fileUrl, Func<int, string> onProgress)
+
+Here, you're saying:
+
+    "Every time the download progresses, call this function (onProgress) and give me the progress percentage."
+
+That’s a classic callback — you're not handling the progress inside the Download method. You're handing off that responsibility to the code that called it.
+🧪 Another Simple Example
+
+void SayHello(string name, Action<string> callback)
+{
+    Console.WriteLine("Hi " + name);
+    callback(name);
+}
+
+SayHello("Ali", name => Console.WriteLine($"Good to see you, {name}!"));
+
+Here, SayHello says hi, and then calls back the function you provided, giving you a moment of control to do something custom.
+🧩 Key Idea
+
+    A callback is a way to give control back to the caller.
+    It lets the caller decide what should happen at a specific moment during execution
