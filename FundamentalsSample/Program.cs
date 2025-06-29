@@ -6,7 +6,15 @@
 //processor.Pay(500);
 
 using FundamentalsSample.FuncUsage.CallbackFunctionWithFunc;
-var downloader = new FileDownloader();
-downloader.Download("http://example.com/file.zip", percent => $"Progress: {percent}%");
+//var downloader = new FileDownloader();
+//downloader.Download("http://example.com/file.zip", percent => $"Progress: {percent}%");
+
+var validator = new InputValidator();
+string result = validator.Validate("hello123", value => value.Length >= 5 && value.All(char.IsLetterOrDigit));
+Console.WriteLine(result);
+
+result = validator.Validate("hell@", value => value.All(char.IsLetterOrDigit));
+Console.WriteLine(result);
+
 
 Console.ReadLine();

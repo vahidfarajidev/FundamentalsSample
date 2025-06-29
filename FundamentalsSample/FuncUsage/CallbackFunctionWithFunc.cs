@@ -20,4 +20,12 @@ namespace FundamentalsSample.FuncUsage.CallbackFunctionWithFunc
             Console.WriteLine("Download complete!");
         }
     }
+
+    internal class InputValidator
+    { 
+        public string Validate(string input, Func<string, bool> isValid)
+        {
+            return isValid(input) ? "Valid input." : "Invalid input";
+        }
+    }
 }
